@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expediente Clan del Golfo</title>
+<meta name="description" content="Los secretos de la negociación entre el Gobierno Petro y el Clan del Golfo. Documentado con fuentes verificadas.">
+<meta property="og:title" content="Expediente Clan del Golfo">
+<meta property="og:description" content="Todo lo que el Gobierno negoció en secreto. Documentado.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="manifest" href="manifest.json">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root {
+    --negro:    #0a0a0f;
+    --grafito:  #141420;
+    --panel:    #1c1c2e;
+    --borde:    #2e2e45;
+    --rojo:     #e63946;
+    --rojo2:    #ff6b6b;
+    --amarillo: #ffd60a;
+    --blanco:   #f0f0f5;
+    --gris:     #9898b0;
+    --verde:    #06d6a0;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: relative;
+    background: var(--grafito);
+    border-bottom: 3px solid var(--rojo);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .header-tape {
+    background: var(--rojo);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .tape-inner {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+    padding-left: 100%;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .header-body {
+    padding: 24px 20px 28px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .exp-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--rojo);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .exp-label::before {
+    content: '';
+    display: inline-block;
+    width: 20px; height: 2px;
+    background: var(--rojo);
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(44px, 12vw, 80px);
+    line-height: 0.92;
+    letter-spacing: 2px;
+    color: var(--blanco);
+    text-shadow: 3px 3px 0 var(--rojo);
+    margin-bottom: 14px;
+  }
+  h1 span { color: var(--rojo); }
+
+  .header-sub {
+    font-size: 14px;
+    color: var(--gris);
+    font-family: 'IBM Plex Mono', monospace;
+    border-left: 3px solid var(--amarillo);
+    padding-left: 12px;
+    line-height: 1.5;
+  }
+  .header-sub strong { color: var(--amarillo); }
+
+  .header-meta {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .meta-badge {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gris);
+  }
+  .meta-badge strong { color: var(--blanco); }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--panel);
+    border-bottom: 1px solid var(--borde);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  nav a {
+    display: block;
+    padding: 12px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gris);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+  nav a:hover, nav a.active {
+    color: var(--amarillo);
+    border-bottom-color: var(--amarillo);
+  }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 16px 60px;
+  }
+
+  /* ── SECTION TITLES ── */
+  .sec-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 44px 0 20px;
+  }
+  .sec-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: var(--rojo);
+    line-height: 1;
+    min-width: 40px;
+  }
+  .sec-info h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1.5px;
+    color: var(--blanco);
+    line-height: 1;
+  }
+  .sec-info p {
+    font-size: 12px;
+    color: var(--gris);
+    font-family: 'IBM Plex Mono', monospace;
+    margin-top: 2px;
+  }
+
+  /* ── CIFRAS IMPACTO ── */
+  .cifras-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  @media(min-width:500px) { .cifras-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .cifra-card {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-top: 3px solid var(--rojo);
+    border-radius: 6px;
+    padding: 16px 12px;
+    text-align: center;
+  }
+  .cifra-card .numero {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--rojo);
+    line-height: 1;
+  }
+  .cifra-card .etiqueta {
+    font-size: 11px;
+    color: var(--gris);
+    font-family: 'IBM Plex Mono', monospace;
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--rojo), var(--borde));
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 22px;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: border-color .2s;
+  }
+  .tl-item:hover { border-color: var(--rojo); }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -24px; top: 18px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--rojo);
+    border: 2px solid var(--negro);
+    box-shadow: 0 0 0 2px var(--rojo);
+  }
+  .tl-fecha {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--amarillo);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .tl-titulo {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--blanco);
+    margin-bottom: 6px;
+  }
+  .tl-desc {
+    font-size: 13px;
+    color: var(--gris);
+    line-height: 1.55;
+  }
+  .tl-tag {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .tag-secreto { background: rgba(230,57,70,.2); color: var(--rojo); }
+  .tag-denuncia { background: rgba(255,214,10,.15); color: var(--amarillo); }
+  .tag-impacto  { background: rgba(6,214,160,.15); color: var(--verde); }
+
+  /* ── ACUERDOS ── */
+  .acuerdo-card {
+    background: var(--panel);
+    border-left: 4px solid var(--rojo);
+    border-radius: 0 6px 6px 0;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+  .acuerdo-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--blanco);
+    margin-bottom: 6px;
+  }
+  .acuerdo-card p {
+    font-size: 13px;
+    color: var(--gris);
+    line-height: 1.6;
+  }
+  .acuerdo-card .fuente {
+    margin-top: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--rojo);
+    letter-spacing: 1px;
+  }
+
+  /* ── PERSONAJES ── */
+  .personajes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+  }
+  .p-card {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 18px 14px;
+    text-align: center;
+    transition: transform .2s, border-color .2s;
+  }
+  .p-card:hover { transform: translateY(-2px); border-color: var(--rojo); }
+  .p-avatar {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--rojo);
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--rojo);
+    background: var(--grafito);
+  }
+  .p-card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blanco);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .p-card .rol {
+    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--amarillo);
+    margin-bottom: 8px;
+  }
+  .p-card .desc {
+    font-size: 12px;
+    color: var(--gris);
+    line-height: 1.5;
+  }
+
+  /* ── REACCIONES ── */
+  .reaccion-card {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .r-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    width: 44px;
+    text-align: center;
+    margin-top: 2px;
+  }
+  .r-body .quien {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--blanco);
+  }
+  .r-body .cargo {
+    font-size: 11px;
+    color: var(--amarillo);
+    font-family: 'IBM Plex Mono', monospace;
+    margin-bottom: 6px;
+  }
+  .r-body .cita {
+    font-size: 13px;
+    color: var(--gris);
+    line-height: 1.55;
+    font-style: italic;
+    border-left: 2px solid var(--borde);
+    padding-left: 10px;
+  }
+
+  /* ── FUENTES ── */
+  .fuente-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: border-color .2s;
+  }
+  .fuente-card:hover { border-color: var(--verde); }
+  .f-logo {
+    width: 42px; height: 42px;
+    border-radius: 6px;
+    background: var(--grafito);
+    border: 1px solid var(--borde);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: var(--verde);
+    flex-shrink: 0;
+  }
+  .f-info h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--blanco);
+    margin-bottom: 2px;
+  }
+  .f-info p {
+    font-size: 11px;
+    color: var(--gris);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .f-arrow {
+    margin-left: auto;
+    color: var(--verde);
+    font-size: 18px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--borde);
+    margin: 40px 0 0;
+  }
+
+  /* ── ALERTA ── */
+  .alerta {
+    background: rgba(230,57,70,.08);
+    border: 1px solid rgba(230,57,70,.3);
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--gris);
+    line-height: 1.55;
+  }
+  .alerta-icon { font-size: 20px; flex-shrink: 0; }
+  .alerta strong { color: var(--rojo); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--grafito);
+    border-top: 2px solid var(--borde);
+    padding: 24px 20px;
+    text-align: center;
+  }
+  footer p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gris);
+    line-height: 1.8;
+  }
+  footer strong { color: var(--blanco); }
+  footer .brand {
+    color: var(--amarillo);
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-tape">
+    <span class="tape-inner">
+      ⚠ EXPEDIENTE CLASIFICADO — INTERÉS NACIONAL — JUNIO 2026 — FUENTES VERIFICADAS — AUDIOS REVELADOS — NOTICIAS CARACOL — SEGURIDAD COMPROMETIDA — ⚠ EXPEDIENTE CLASIFICADO — INTERÉS NACIONAL — JUNIO 2026 — FUENTES VERIFICADAS — AUDIOS REVELADOS — NOTICIAS CARACOL — SEGURIDAD COMPROMETIDA —
+    </span>
+  </div>
+  <div class="header-body">
+    <div class="exp-label">Dosier de interés público</div>
+    <h1>EXPEDIENTE<br><span>CLAN DEL</span><br>GOLFO</h1>
+    <p class="header-sub">
+      Lo que el gobierno negoció en secreto con la mayor organización criminal del país.<br>
+      <strong>Documentado con fuentes verificadas. Junio 24–25, 2026.</strong>
+    </p>
+    <div class="header-meta">
+      <div class="meta-badge">📅 Período: <strong>2022 – 2026</strong></div>
+      <div class="meta-badge">📍 Colombia</div>
+      <div class="meta-badge">🔴 Estado: <strong>Escándalo activo</strong></div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#cifras" class="active">Cifras</a>
+    <a href="#timeline">Cronología</a>
+    <a href="#acuerdos">Acuerdos</a>
+    <a href="#personajes">Personajes</a>
+    <a href="#reacciones">Reacciones</a>
+    <a href="#fuentes">Fuentes</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ALERTA INTRO -->
+  <div class="alerta" style="margin-top:28px">
+    <div class="alerta-icon">🚨</div>
+    <div>
+      <strong>Revelación de alto impacto.</strong> El 24 de junio de 2026, la Unidad Investigativa de Noticias Caracol publicó audios inéditos de negociaciones secretas entre el gobierno de Gustavo Petro y el Clan del Golfo, iniciadas en septiembre de 2022. Este dosier compila los hechos documentados y verificados.
+    </div>
+  </div>
+
+  <!-- ── CIFRAS ── -->
+  <section id="cifras">
+    <div class="sec-title">
+      <div class="sec-num">01</div>
+      <div class="sec-info">
+        <h2>El Costo para Colombia</h2>
+        <p>Cifras verificadas 2022–2025</p>
+      </div>
+    </div>
+
+    <div class="cifras-grid">
+      <div class="cifra-card">
+        <div class="numero">338</div>
+        <div class="etiqueta">Municipios con presencia del Clan (2025)</div>
+      </div>
+      <div class="cifra-card">
+        <div class="numero">145</div>
+        <div class="etiqueta">Municipios que tenía en 2022 al iniciar el gobierno</div>
+      </div>
+      <div class="cifra-card">
+        <div class="numero">9.915</div>
+        <div class="etiqueta">Integrantes en 2025 (+144% vs 2022)</div>
+      </div>
+      <div class="cifra-card">
+        <div class="numero">80</div>
+        <div class="etiqueta">Oficiales militares y policiales retirados</div>
+      </div>
+    </div>
+    <div class="cifras-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="cifra-card">
+        <div class="numero">0</div>
+        <div class="etiqueta">Bombardeos entre ago. 2022 y nov. 2024</div>
+      </div>
+      <div class="cifra-card">
+        <div class="numero">29</div>
+        <div class="etiqueta">Órdenes de captura solicitadas levantar (mayo 2026)</div>
+      </div>
+      <div class="cifra-card">
+        <div class="numero">35</div>
+        <div class="etiqueta">Generales de las FF.MM. retirados en el proceso</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── TIMELINE ── -->
+  <section id="timeline">
+    <div class="sec-title">
+      <div class="sec-num">02</div>
+      <div class="sec-info">
+        <h2>Cronología del Escándalo</h2>
+        <p>De los acuerdos secretos a las revelaciones</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-fecha">Agosto 25, 2022</div>
+        <div class="tl-titulo">Retiro masivo de generales</div>
+        <div class="tl-desc">22 generales de la Policía y al menos 13 de las Fuerzas Militares son llamados a retiro. Entre ellos, varios que capturaron a alias Otoniel, máximo jefe del Clan. Hoy se sabe que esta decisión coincide con el inicio de contactos con la organización criminal.</div>
+        <span class="tl-tag tag-secreto">Secreto revelado</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-fecha">Septiembre 2, 2022</div>
+        <div class="tl-titulo">Audio clave: "Juguemos a los congelados"</div>
+        <div class="tl-desc">Danilo Rueda, recién nombrado comisionado de paz, se reúne con alias Jerónimo del Clan del Golfo. Usando la analogía del juego infantil "congelados", le promete que parará la presión militar al grupo como señal de buena voluntad.</div>
+        <span class="tl-tag tag-secreto">Audio inédito revelado</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-fecha">Ago. 2022 – Nov. 2024</div>
+        <div class="tl-titulo">2 años sin un solo bombardeo</div>
+        <div class="tl-desc">Durante 26 meses, el Ejército no realizó ningún bombardeo contra el Clan del Golfo. La organización creció sin presión operacional. Su pie de fuerza aumentó un 140% en ese período.</div>
+        <span class="tl-tag tag-impacto">Impacto territorial</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-fecha">Noviembre 2023</div>
+        <div class="tl-titulo">Danilo Rueda sale del cargo</div>
+        <div class="tl-desc">Tras más de un año de negociaciones secretas, Rueda es reemplazado por Otty Patiño y Álvaro Jiménez. La estrategia cambia: a finales de 2024 se retoman operaciones militares contra el Clan.</div>
+        <span class="tl-tag tag-denuncia">Cambio de rumbo</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-fecha">Agosto 19, 2025</div>
+        <div class="tl-titulo">Reunión de Inteligencia con narco</div>
+        <div class="tl-desc">El director de la DNI (inteligencia del Estado), Jorge Lemus, desayuna con alias "Boyaco Sinaloa" — esmeraldero con investigación abierta por nexos con el Clan del Golfo — buscando apoyo político para una ley de sometimiento criminal.</div>
+        <span class="tl-tag tag-secreto">Escándalo institucional</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-fecha">Septiembre 18, 2025</div>
+        <div class="tl-titulo">Diálogos formales en Doha, Qatar</div>
+        <div class="tl-desc">Se instalan oficialmente mesas de negociación en Qatar. Se acuerdan acciones piloto de sustitución de cultivos en 5 municipios y el compromiso del Clan de censar niños reclutados para entregárselos al ICBF.</div>
+        <span class="tl-tag tag-impacto">Proceso de paz</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-fecha">Mayo 2026</div>
+        <div class="tl-titulo">Solicitud de levantar 29 capturas</div>
+        <div class="tl-desc">A una semana de la primera vuelta presidencial, el comisionado de paz solicita a la Fiscal levantar 29 órdenes de captura. Tres de ellas corresponden a los máximos jefes del Clan con pedidos de extradición de EE.UU. por narcotráfico.</div>
+        <span class="tl-tag tag-denuncia">Denuncia pública</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-fecha">Junio 24–25, 2026</div>
+        <div class="tl-titulo">Noticias Caracol publica los audios</div>
+        <div class="tl-desc">La Unidad Investigativa revela los audios inéditos de 2022. El país reacciona con indignación. Partidos de oposición, empresarios, HRW y analistas de seguridad exigen investigaciones y rendición de cuentas.</div>
+        <span class="tl-tag tag-denuncia">Estalla el escándalo</span>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── ACUERDOS SECRETOS ── -->
+  <section id="acuerdos">
+    <div class="sec-title">
+      <div class="sec-num">03</div>
+      <div class="sec-info">
+        <h2>Los Acuerdos Secretos</h2>
+        <p>Compromisos revelados en los audios y documentos</p>
+      </div>
+    </div>
+
+    <div class="acuerdo-card">
+      <h3>🔇 Suspensión Total de Bombardeos</h3>
+      <p>El gobierno prometió al Clan del Golfo que la Fuerza Pública quedaría "congelada" — sin operaciones aéreas — como gesto de buena voluntad. Entre agosto 2022 y noviembre 2024 no hubo un solo bombardeo, permitiendo al grupo armarse, reclutar y expandir su territorio sin presión militar.</p>
+      <div class="fuente">▲ FUENTE: Audio Danilo Rueda – Alias Jerónimo / 2 sep 2022 / Noticias Caracol</div>
+    </div>
+
+    <div class="acuerdo-card">
+      <h3>🎖️ Retiro de Oficiales Clave</h3>
+      <p>22 generales de la Policía y 13 de las FF.MM. fueron dados de baja en una sola decisión el 25 de agosto de 2022. Analistas revelaron que varios de estos oficiales eran los que más conocían las redes del Clan y habían participado en la captura de alias Otoniel. Los retiros llegaron a 80 con el tiempo.</p>
+      <div class="fuente">▲ FUENTE: El Tiempo / Daniel Mejía, analista de seguridad / Jun 2026</div>
+    </div>
+
+    <div class="acuerdo-card">
+      <h3>📋 Levantamiento de 29 Órdenes de Captura</h3>
+      <p>En mayo de 2026, a una semana de las elecciones presidenciales, el comisionado de paz solicitó formalmente a la Fiscal Luz Adriana Camargo levantar 29 órdenes de captura. Tres correspondían a 'Chiquito Malo', 'Rodrigo Flechas' y 'Monseñor' — los máximos jefes del Clan, requeridos por EE.UU. por narcotráfico.</p>
+      <div class="fuente">▲ FUENTE: Noticias Caracol / Resolución comisionado de paz / May 2026</div>
+    </div>
+
+    <div class="acuerdo-card">
+      <h3>🕵️ Inteligencia al Servicio de la Negociación</h3>
+      <p>La Dirección Nacional de Inteligencia (DNI) fue utilizada para gestionar canales de comunicación con el Clan del Golfo a través de intermediarios como alias 'Boyaco Sinaloa', quien tenía investigación activa en la Fiscalía por presuntos nexos con el grupo criminal.</p>
+      <div class="fuente">▲ FUENTE: Noticias Caracol / Reunión DNI – Boyaco Sinaloa / 19 ago 2025</div>
+    </div>
+
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── PERSONAJES ── -->
+  <section id="personajes">
+    <div class="sec-title">
+      <div class="sec-num">04</div>
+      <div class="sec-info">
+        <h2>Los Personajes</h2>
+        <p>Actores clave del escándalo</p>
+      </div>
+    </div>
+
+    <div class="personajes-grid">
+      <div class="p-card">
+        <div class="p-avatar">DR</div>
+        <h3>Danilo Rueda</h3>
+        <div class="rol">Ex-Comisionado de Paz</div>
+        <p class="desc">Voz en los audios clave de sep 2022. Prometió "congelar" la Fuerza Pública al Clan. Niega haber firmado acuerdos. Salió del cargo en nov. 2023.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-avatar">JE</div>
+        <h3>Alias "Jerónimo"</h3>
+        <div class="rol">Comandante del Clan del Golfo</div>
+        <p class="desc">Luis Armando Pérez. Interlocutor en las negociaciones secretas de 2022. Representó al grupo en los diálogos de Doha 2025.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-avatar">GP</div>
+        <h3>Gustavo Petro</h3>
+        <div class="rol">Presidente de la República</div>
+        <p class="desc">Su gobierno implementó la "Paz Total". Sus críticos dicen que el proceso benefició al Clan y comprometió la seguridad nacional.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-avatar">JL</div>
+        <h3>Jorge Lemus</h3>
+        <div class="rol">Ex-Director DNI</div>
+        <p class="desc">Sostuvo el polémico desayuno con alias Boyaco Sinaloa en agosto 2025 para establecer canales con el Clan.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-avatar">BS</div>
+        <h3>Alias "Boyaco Sinaloa"</h3>
+        <div class="rol">Esmeraldero / Ex-narco</div>
+        <p class="desc">Eduard Ferney Rincón. Intermediario con investigación en la Fiscalía por nexos con el Clan del Golfo. Invitado a la DNI.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-avatar">CM</div>
+        <h3>Alias "Chiquito Malo"</h3>
+        <div class="rol">Máximo jefe del Clan</div>
+        <p class="desc">Uno de los tres jefes a quienes se buscó levantar la orden de captura. Requerido por EE.UU. por narcotráfico.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── REACCIONES ── -->
+  <section id="reacciones">
+    <div class="sec-title">
+      <div class="sec-num">05</div>
+      <div class="sec-info">
+        <h2>Reacciones del País</h2>
+        <p>Política, sociedad civil e instituciones</p>
+      </div>
+    </div>
+
+    <div class="reaccion-card">
+      <div class="r-icon">🏛️</div>
+      <div class="r-body">
+        <div class="quien">Juan Manuel Galán</div>
+        <div class="cargo">Ex-candidato presidencial</div>
+        <p class="cita">El presidente Petro no negoció la paz total con el Clan del Golfo, firmó la rendición total del Estado.</p>
+      </div>
+    </div>
+
+    <div class="reaccion-card">
+      <div class="r-icon">⚖️</div>
+      <div class="r-body">
+        <div class="quien">Juanita Goebertus</div>
+        <div class="cargo">Human Rights Watch — Directora para las Américas</div>
+        <p class="cita">La combinación de ausencia de política de seguridad efectiva y efectos no deseados de la paz total están relacionados con el fortalecimiento del control territorial de estos grupos armados.</p>
+      </div>
+    </div>
+
+    <div class="reaccion-card">
+      <div class="r-icon">🏢</div>
+      <div class="r-body">
+        <div class="quien">Bruce Mac Master</div>
+        <div class="cargo">Presidente de la ANDI</div>
+        <p class="cita">Las grabaciones confirman las advertencias que distintos sectores realizaron sobre la estrategia de seguridad del Gobierno. Esto es inaceptable para el sector productivo y para Colombia.</p>
+      </div>
+    </div>
+
+    <div class="reaccion-card">
+      <div class="r-icon">🔴</div>
+      <div class="r-body">
+        <div class="quien">María Fernanda Cabal</div>
+        <div class="cargo">Senadora — Centro Democrático</div>
+        <p class="cita">Esta conversación de alias Jerónimo con Danilo Rueda es una vergüenza. Negociaron la seguridad y defensa, violaron la Constitución para darle libertad a los terroristas.</p>
+      </div>
+    </div>
+
+    <div class="reaccion-card">
+      <div class="r-icon">🎗️</div>
+      <div class="r-body">
+        <div class="quien">Fico Gutiérrez</div>
+        <div class="cargo">Ex-candidato presidencial</div>
+        <p class="cita">Las revelaciones confirman el nefasto camino por el que Petro llevó al país: jugando a los congelados con el Clan del Golfo mientras los criminales se fortalecían y sembraban terror.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── FUENTES ── -->
+  <section id="fuentes">
+    <div class="sec-title">
+      <div class="sec-num">06</div>
+      <div class="sec-info">
+        <h2>Fuentes Verificadas</h2>
+        <p>Todo documentado. Nada inventado.</p>
+      </div>
+    </div>
+
+    <a class="fuente-card" href="https://www.noticiascaracol.com/informes-especiales/secretos-de-negociacion-con-clan-del-golfo-gobierno-prometio-sacar-oficiales-y-frenar-bombardeos-rg10" target="_blank">
+      <div class="f-logo">NC</div>
+      <div class="f-info">
+        <h4>Noticias Caracol — Unidad Investigativa</h4>
+        <p>Audios inéditos de la negociación 2022. Informe principal. Jun 24, 2026</p>
+      </div>
+      <div class="f-arrow">↗</div>
+    </a>
+
+    <a class="fuente-card" href="https://www.eltiempo.com/amp/justicia/conflicto-y-narcotrafico/las-revelaciones-de-las-negociaciones-con-el-clan-de-golfo-que-ponen-en-entredicho-la-salida-de-generales-de-la-la-fuerza-publica-3566728" target="_blank">
+      <div class="f-logo">ET</div>
+      <div class="f-info">
+        <h4>El Tiempo</h4>
+        <p>Retiro de generales y nexo con negociaciones. Jun 25, 2026</p>
+      </div>
+      <div class="f-arrow">↗</div>
+    </a>
+
+    <a class="fuente-card" href="https://www.elpais.com.co/colombia/duras-reacciones-a-presuntos-acuerdos-entre-el-gobierno-y-el-clan-del-golfo-es-una-verguenza-2442.html" target="_blank">
+      <div class="f-logo">EP</div>
+      <div class="f-info">
+        <h4>El País</h4>
+        <p>Reacciones políticas y gremiales. Jun 24, 2026</p>
+      </div>
+      <div class="f-arrow">↗</div>
+    </a>
+
+    <a class="fuente-card" href="https://ideaspaz.org/publicaciones/investigaciones-analisis/2026-02/la-anatomia-del-clan-del-golfo-entre-el-fortalecimiento-y-la-negociacion-de-paz-en-catar" target="_blank">
+      <div class="f-logo">FIP</div>
+      <div class="f-info">
+        <h4>Fundación Ideas para la Paz</h4>
+        <p>Análisis: anatomía del Clan del Golfo 2022–2025. Feb 2026</p>
+      </div>
+      <div class="f-arrow">↗</div>
+    </a>
+
+    <a class="fuente-card" href="https://www.pulzo.com/amp/nacion/audios-confirman-promesas-gobierno-clan-golfo-para-no-atacarlos-PP5226587" target="_blank">
+      <div class="f-logo">PZ</div>
+      <div class="f-info">
+        <h4>Pulzo</h4>
+        <p>Confirmación de promesas y contexto completo. Jun 24, 2026</p>
+      </div>
+      <div class="f-arrow">↗</div>
+    </a>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong>EXPEDIENTE CLAN DEL GOLFO</strong><br>
+    Dosier de Educación Cívica y Memoria Pública<br>
+    Todos los hechos están documentados con fuentes de medios verificados.<br>
+    Última actualización: <strong>25 de junio de 2026</strong>
+  </p>
+  <p class="brand">Desarrollada por Vibras Positivas HM — Derechos de Autor Reservados</p>
+</footer>
+
+<script>
+  // Nav active highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const link = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
